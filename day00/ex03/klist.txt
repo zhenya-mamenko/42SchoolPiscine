@@ -1,0 +1,6 @@
+Credentials cache: API:46252
+        Principal: emamenko@42.US.ORG
+
+  Issued                Expires               Principal
+Oct 25 07:36:00 2018  Oct 25 17:36:00 2018  krbtgt/42.US.ORG@42.US.ORG
+Oct 25 07:36:04 2018  Oct 25 17:36:00 2018  ldap/ldap-master.42.us.org@42.US.ORG

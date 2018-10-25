@@ -1,0 +1,1 @@
+ldapsearch -LLL -Q -S cn "(uid=z*)" cn | awk -v OFS=',' '{split($0,a,": ")} /^cn/{cn=a[2]; print cn}' | sort -r -f
