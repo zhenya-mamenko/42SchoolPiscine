@@ -1,0 +1,1 @@
+cat /etc/passwd | grep -v "#" | awk '{if (NR % 2 == 0) { split($0,a,":"); print a[1]} }' | rev | sort -r | sed  -n -e "$FT_LINE1,$FT_LINE2 p" | paste -sd "," - | sed -e "s/,/, /g" -e "s/.*/&./" | tr -d '\n'
