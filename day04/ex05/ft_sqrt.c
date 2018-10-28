@@ -10,24 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt(int nb)
+int		find_sqrt(int nb, int d)
 {
-	int max;
 	int i;
 
-	if (nb == 0 || nb == 1)
-	{
-		return (nb);
-	}
-	max = nb / 2;
-	i = 2;
-	while (i <= max)
+	if ((__INT32_MAX__ / d) < d || nb < (d * d))
+		return (find_sqrt(nb, (d / 2)));
+	i = d;
+	while (1)
 	{
 		if (nb == i * i)
 			return (i);
 		if (nb < i * i)
-			break ;
+			return (0);
 		i += 1;
 	}
-	return (0);
+}
+
+int		ft_sqrt(int nb)
+{
+	if (nb <= 0)
+		return (0);
+	else if (nb == 1)
+		return (1);
+	return (find_sqrt(nb, (nb / 2)));
 }

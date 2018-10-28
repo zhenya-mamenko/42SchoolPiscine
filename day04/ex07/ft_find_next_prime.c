@@ -10,24 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt_near(int nb)
+int		find_sqrt_near(int nb, int d)
 {
-	int max;
 	int i;
 
-	if (nb == 0 || nb == 1)
+	if ((__INT32_MAX__ / d) < d || nb < (d * d))
+		return (find_sqrt_near(nb, (d / 2)));
+	i = d;
+	while (1)
 	{
-		return (nb);
-	}
-	max = nb / 2;
-	i = 2;
-	while (i <= max)
-	{
-		if (i * i >= nb)
+		if (nb >= i * i)
 			return (i);
 		i += 1;
 	}
-	return (0);
 }
 
 int		ft_is_prime(int nb)
@@ -36,10 +31,10 @@ int		ft_is_prime(int nb)
 	int i;
 
 	if (nb <= 1)
-	{
 		return (0);
-	}
-	max = ft_sqrt_near(nb);
+	if (nb == 2)
+		return (1);
+	max = find_sqrt_near(nb, nb / 2) + 1;
 	i = 2;
 	while (i <= max)
 	{
@@ -57,9 +52,7 @@ int		ft_find_next_prime(int nb)
 	while (1)
 	{
 		if (ft_is_prime(nb))
-		{
 			return (nb);
-		}
 		nb += 1;
 	}
 }
