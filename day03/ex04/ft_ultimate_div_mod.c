@@ -6,11 +6,11 @@
 /*   By: emamenko <emamenko@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 13:16:35 by emamenko          #+#    #+#             */
-/*   Updated: 2018/10/25 13:16:35 by emamenko         ###   ########.fr       */
+/*   Updated: 2018/10/29 11:52:28 by emamenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int *a, int *b)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int div;
 	int mod;
