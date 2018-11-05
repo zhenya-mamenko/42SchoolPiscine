@@ -1,7 +1,7 @@
 # 42SchoolPiscine
 Daily tasks for Piscine C at School42 Silicon Valley, October, 2018
 
-* Rush 00 — ok
+* Rush 00 — all ok
 * Rush 01 — 
 
 * Project 01 (Match-N-match) — 
