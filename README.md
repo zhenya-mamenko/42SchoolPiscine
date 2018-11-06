@@ -15,4 +15,4 @@ Daily tasks for Piscine C at School42 Silicon Valley, October, 2018
 * Day 06 — all ok
 * Day 07 — all ok
 * Day 08 — all ok
-* Day 09 - 
+* Day 09 - as is. I don't understand some execises at all.
