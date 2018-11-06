@@ -4,7 +4,7 @@ Daily tasks for Piscine C at School42 Silicon Valley, October, 2018
 * Rush 00 — all ok
 * Rush 01 — 
 
-* Project 01 (Match-N-Match) — 
+* Project 01 (Match-N-Match) — 00 ok
 
 * Day 00 — all ok
 * Day 01 — all ok
@@ -15,3 +15,4 @@ Daily tasks for Piscine C at School42 Silicon Valley, October, 2018
 * Day 06 — all ok
 * Day 07 — all ok
 * Day 08 — all ok
+* Day 09 - 
