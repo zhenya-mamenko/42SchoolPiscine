@@ -6,7 +6,7 @@
 /*   By: emamenko <emamenko@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/29 08:26:07 by emamenko          #+#    #+#             */
-/*   Updated: 2018/11/05 14:20:57 by emamenko         ###   ########.fr       */
+/*   Updated: 2018/11/11 18:57:18 by emamenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,7 @@ int		testchar(char c, int *n, int *s, int *result)
 {
 	if (c == '+' || c == '-')
 	{
-		if (*n != 0 || *s == 1)
-		{
-			*s = 1;
-			return (0);
-		}
-		*n = c == '+' ? 1 : -1;
+		*n = c == '+' ? *n : -(*n);
 		return (1);
 	}
 	else if (index_char(c, "\t\n\v\f\r \0") == -1)
@@ -45,7 +40,7 @@ int		testchar(char c, int *n, int *s, int *result)
 	return (0);
 }
 
-int		ft_atoi(char *str)
+int		ft_atoi_ev(char *str)
 {
 	int		result;
 	int		s;
@@ -55,7 +50,7 @@ int		ft_atoi(char *str)
 	result = 0;
 	s = 0;
 	f = 0;
-	negative = 0;
+	negative = 1;
 	while ((str[f] >= '0' && str[f] <= '9') || str[f] == '+' ||
 		str[f] == '-' || index_char(str[f], "\t\n\v\f\r \0") != -1)
 	{

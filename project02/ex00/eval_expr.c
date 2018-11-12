@@ -6,7 +6,7 @@
 /*   By: emamenko <emamenko@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 22:50:36 by emamenko          #+#    #+#             */
-/*   Updated: 2018/11/10 18:55:57 by emamenko         ###   ########.fr       */
+/*   Updated: 2018/11/11 19:14:29 by emamenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		eval_simple(char *str)
 	int		pos;
 	char	*s;
 
-	s = malloc(sizeof(char) * (len(str) + 1));
+	s = malloc(sizeof(char) * (2 * len(str) + 1));
 	ft_strlcpy(s, str, len(str) + 1);
 	result = 0;
 	i = -1;
@@ -32,9 +32,11 @@ int		eval_simple(char *str)
 		if ((pos = str_index(g_op[i].op, s, -1)) != -1)
 		{
 			s[pos + 1] = '\0';
-			result = g_op[i].func(ft_atoi(s), ft_atoi(s + pos + 2));
+			result = g_op[i].func(ft_atoi_ev(s), ft_atoi_ev(s + pos + 2));
 			break ;
 		}
+	if (pos == -1)
+		result = ft_atoi_ev(str);
 	free(s);
 	return (result);
 }
@@ -63,7 +65,7 @@ void	eval_operations(char *str, int *result)
 	int		pos;
 
 	l = len(str);
-	s = malloc(sizeof(char) * (l + 1));
+	s = malloc(sizeof(char) * (2 * l + 1));
 	ft_strlcpy(s, str, l + 1);
 	pos = -1;
 	i = str_index2(g_op1, s, -1);
@@ -87,7 +89,7 @@ void	process_par(char *str, int *result)
 	int		i;
 	int		j;
 
-	s = malloc(sizeof(char) * (len(str) + 1));
+	s = malloc(sizeof(char) * (2 * len(str) + 1));
 	ft_strlcpy(s, str, len(str) + 1);
 	while ((i = char_index('(', s) - 1) != -2)
 	{
@@ -111,14 +113,18 @@ void	process_par(char *str, int *result)
 int		eval_expr(char *str)
 {
 	char	*s;
-	int		i;
+	char	*v;
 	int		result;
 
-	i = 0;
-	s = malloc(sizeof(char) * (len(str) + 1));
-	ft_strlcpy(s, str, len(str) + 1);
 	result = 0;
-	process_par(s, &result);
-	free(s);
+	if (str[0] != '\0')
+	{
+		s = malloc(sizeof(char) * (len(str) + 1));
+		ft_strlcpy(s, str, len(str) + 1);
+		v = validate(s);
+		process_par(v, &result);
+		free(s);
+		free(v);
+	}
 	return (result);
 }

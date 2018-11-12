@@ -6,7 +6,7 @@
 /*   By: emamenko <emamenko@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 22:47:57 by emamenko          #+#    #+#             */
-/*   Updated: 2018/11/10 17:31:37 by emamenko         ###   ########.fr       */
+/*   Updated: 2018/11/11 18:48:58 by emamenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putnbr(long nb);
 int					eval_expr(char *str);
-int					ft_atoi(char *str);
+int					ft_atoi_ev(char *str);
 int					ft_add(int value1, int value2);
 int					ft_sub(int value1, int value2);
 int					ft_mul(int value1, int value2);
@@ -37,6 +37,7 @@ int					str_index2(char **to_find, char *str, int l);
 int					str_index_rev(char *to_find, char *str, int max_l);
 int					str_index_rev2(char **to_find, char *str, int l);
 char				*clear_spaces(char *str);
+char				*validate(char *str);
 void				ft_itoa(long nb, char *s, int *index);
 unsigned int		ft_strlcpy(char *dest, char *src, unsigned int size);
 
