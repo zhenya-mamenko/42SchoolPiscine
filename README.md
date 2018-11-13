@@ -1,5 +1,5 @@
 # 42SchoolPiscine
-Daily tasks for Piscine C at School42 Silicon Valley, October, 2018
+Daily tasks for Piscine C at School42 Silicon Valley, October-November, 2018
 
 * Rush 00 — all ok
 * Rush 01 — almost ok (didn't check for wrong input (same numbers in row/col) and slow recursion)
