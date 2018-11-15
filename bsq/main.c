@@ -6,10 +6,11 @@
 /*   By: emamenko <emamenko@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/29 09:58:03 by mkryukov          #+#    #+#             */
-/*   Updated: 2018/11/13 21:52:41 by emamenko         ###   ########.fr       */
+/*   Updated: 2018/11/15 10:58:44 by emamenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "common.h"
 
 int		read_params(int fd, char *str)
@@ -47,8 +48,8 @@ int		read_data(int fd, char *s, int c, char *s1)
 	f = 1;
 	if (fd != 0)
 	{
-		if (c != 0 && !(read(fd, s + g_size_x + 1, c) == c
-			&& read(fd, &i, 1) == 0))
+		if ((c != 0 && !(read(fd, s + g_size_x + 1, c) == c
+			&& read(fd, &i, 1) == 0)) || read(fd, &i, 1) != 0)
 			f = 0;
 	}
 	else
