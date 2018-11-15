@@ -1,12 +1,14 @@
 # 42SchoolPiscine
 Daily tasks for Piscine C at School42 Silicon Valley, October-November, 2018
 
+* BSQ — 
+---------
 * Rush 00 — all ok
 * Rush 01 — almost ok (didn't check for wrong input (same numbers in row/col) and slow recursion)
-
+---------
 * Project 01 (Match-N-Match) — 00 ok
 * Project 02 (EvalExpr) — 00 almost ok (pass all tests on evaluation, 7/8 from Moulinette) 
-
+---------
 * Day 00 — all ok
 * Day 01 — all ok
 * Day 02 — 01-06 ok
